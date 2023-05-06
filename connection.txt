@@ -1,1 +1,0 @@
-Driver=ODBC Driver 18 for SQL Server;Server=tcp:ai-acc-sys-db-server.database.windows.net,1433;Database=ai-acc-sys-database;Uid=ai-acc-sys-admin;Pwd=dokKoishoichi0504!;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;
