@@ -13,7 +13,7 @@ VAT_TABLE = 'vat_master' # almost static
 class GeneralLedger(Base):
     __tablename__ = GL_TABLE
     record_id = Column(Integer, primary_key=True)
-    journal_id = Column(Integer, nullable=False)
+    journal_id = Column(String(50), nullable=False)
     account_id = Column(BigInteger, nullable=False)
     account_name = Column(String(50), nullable=True)
     subaccount_id = Column(BigInteger, nullable=False)
@@ -23,7 +23,7 @@ class GeneralLedger(Base):
     creator_id = Column(Integer(), nullable=False)
     approver_id = Column(Integer(), nullable=False)
     create_date = Column(DateTime(), nullable=False)
-    approve_date = Column(DateTime(), nullable=False)
+    approve_date = Column(DateTime(), nullable=True) # approve later
     
     def to_dict(self):
         return {
@@ -35,8 +35,8 @@ class GeneralLedger(Base):
             'vat_id': self.vat_id,
             'debter_creditor': self.debter_creditor,
             'amount': self.amount,
-            'creator': self.creater,
-            'approver': self.approver,
+            'creator_id': self.creator_id,
+            'approver_id': self.approver_id,
             'create_date': self.create_date,
             'approve_date': self.approve_date
         }
